@@ -61,29 +61,30 @@ Use `./build.sh` to build CiCo and `./run.sh` to run it if using the command lin
 ## Expected results
 * Should display "Developer" for the user name.
 
-# Module 4: Ticket 402 - Limit card number input to eight characters
+# Module 4: Ticket 402 - Limit card number length
 
 ## Test steps
 1. Build and run CiCo.
-2. Click the card number field and type 12345678.
-3. Try to type 9 at the end of the number.
-4. Select the last two characters and type 90 to replace them.
-5. Select all characters and type 00000000 to replace them.
-6. Copy the field's contents, clear the field, and paste the copied number into it.
-7. Press Backspace once, then type 1.
-8. Move the cursor to the beginning and press Delete once, then type 2.
-9. Clear the field. Copy 123456789 from this test and paste it into the field.
-10. Type 00000000 into the empty field and click Update.
+2. Enter 12345678 into the field.
+3. Try to enter 9 at the end of the number.
+4. Select the last two digits and enter 90.
+5. Select the whole number and enter 00000000.
+6. Copy the number, clear the field, and paste the number back in.
+7. Press Backspace once and enter 1.
+8. Move to the beginning of the number, press Delete once, and enter 2.
+9. Clear the field. Copy 123456789 from this test and paste it in.
+10. Enter 00000000 into the field and click Update.
 11. Wait 11 seconds.
 
 ## Expected results
-* The field should display 12345678 after step 2 and remain 12345678 after step 3.
-* The field should display 12345690 after step 4; replacing selected text should work even when the field is full.
-* The field should display 00000000 after steps 5 and 6; an eight-character paste should be accepted.
-* In step 7, Backspace should shorten the number to 0000000, then typing 1 should produce 00000001.
-* In step 8, Delete should shorten the number to 0000001, then typing 2 should produce 20000001.
-* The field should remain empty after step 9; an oversized paste should be rejected in full.
+* Should display 12345678 after steps 2 and 3.
+* Should display 12345690 after step 4.
+* Should display 00000000 after steps 5 and 6.
+* Should let you remove a digit and enter another one in steps 7 and 8.
+* Should display 00000001 after step 7.
+* Should display 20000001 after step 8.
+* The field should stay empty after step 9.
 * The status panel should appear after step 10.
-* The main panel should appear with an empty card number field after step 11.
+* The main panel should appear with an empty field after step 11.
 
 
