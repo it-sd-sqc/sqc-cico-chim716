@@ -61,4 +61,29 @@ Use `./build.sh` to build CiCo and `./run.sh` to run it if using the command lin
 ## Expected results
 * Should display "Developer" for the user name.
 
+# Module 4: Ticket 402 - Limit card number input to eight characters
+
+## Test steps
+1. Build and run CiCo.
+2. Click the card number field and type 12345678.
+3. Try to type 9 at the end of the number.
+4. Select the last two characters and type 90 to replace them.
+5. Select all characters and type 00000000 to replace them.
+6. Copy the field's contents, clear the field, and paste the copied number into it.
+7. Press Backspace once, then type 1.
+8. Move the cursor to the beginning and press Delete once, then type 2.
+9. Clear the field. Copy 123456789 from this test and paste it into the field.
+10. Type 00000000 into the empty field and click Update.
+11. Wait 11 seconds.
+
+## Expected results
+* The field should display 12345678 after step 2 and remain 12345678 after step 3.
+* The field should display 12345690 after step 4; replacing selected text should work even when the field is full.
+* The field should display 00000000 after steps 5 and 6; an eight-character paste should be accepted.
+* In step 7, Backspace should shorten the number to 0000000, then typing 1 should produce 00000001.
+* In step 8, Delete should shorten the number to 0000001, then typing 2 should produce 20000001.
+* The field should remain empty after step 9; an oversized paste should be rejected in full.
+* The status panel should appear after step 10.
+* The main panel should appear with an empty card number field after step 11.
+
 
