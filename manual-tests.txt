@@ -87,4 +87,18 @@ Use `./build.sh` to build CiCo and `./run.sh` to run it if using the command lin
 * The status panel should appear after step 10.
 * The main panel should appear with an empty field after step 11.
 
+# Module 5: Ticket 502 - Close the application with the window
+
+## Test steps
+1. Build and run CiCo from the command line or your IDE.
+2. Click the X to close the window.
+3. Run CiCo again.
+4. Enter 00000000 into the field and click Update.
+5. Click the X before the status panel timeout finishes.
+
+## Expected results
+* The window should close and the application should stop after steps 2 and 5.
+* The console should display "Clean shutdown" after steps 2 and 5.
+* The command prompt should return, or the IDE should show the program has stopped.
+
 
